@@ -1,0 +1,14 @@
+<div class="flex">
+    <button class="btn" [ngClass]="{'disabled':_gridService.setStart}" (click)="setStart()">Set Start</button>
+    <button class="btn" [ngClass]="{'disabled':!_gridService.setDestination}" (click)="setDestination()">Set Destination</button>
+    <button class="btn" [ngClass]="{'disabled':!_gridService.setBlock}" (click)="setBlock()">Set Block</button>
+    <button class="btn" [ngClass]="{}" (click)="startPathFinding()">Find Path</button>
+    <button class="btn" [ngClass]="{}" (click)="refresh()">Reset</button>
+</div>
+<div>
+    <div *ngFor="let r of rows">
+        <div class="flex">
+          <app-tile *ngFor="let c of columns" [rowIndex]="r" [columnIndex]="c" [numRows]="numberOfRows" [numColumns]="numberOfColumns"></app-tile>
+        </div>
+    </div>
+</div> 
